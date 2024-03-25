@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LGC Dark Mode Guide</title>
+        <link rel="icon" type="image/x-icon" href="../IMAGES/favicon.svg" />
+        <meta name="theme-color" content="#000037" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+            function Yourhere() {
+                alert("You're here")
+            }
+            var oldscrollyvar = window.pageYOffset;
+                window.onscroll = function(){
+                    var nowscrollyvar = window.pageYOffset;
+                    if (oldscrollyvar > nowscrollyvar) {
+                        document.getElementById("topper").style.top = "0";
+                    }
+                    else {
+                        document.getElementById("topper").style.top = "-65px";
+                    }
+                    oldscrollyvar = nowscrollyvar;
+                }
+            function gettime() {
+                const time = new Date();
+                let m = time.getMinutes();
+                let h = time.getHours();
+                m = updatetime(m)
+                document.getElementById("clock").innerHTML= h+":"+m;
+                 setTimeout(gettime, 1000);
+            }
+            function updatetime(o) {
+                if (o<10) {o="0"+o};
+                return o;
+            }
+            function copycmd1() {
+                navigator.clipboard.writeText("sudo apt-get update -y");
+                alert("Copied sudo apt-get update -y")
+            }
+            function copycmd2() {
+                navigator.clipboard.writeText("sudo apt install gnome-tweaks -y");
+                alert("Copied sudo apt install gnome-tweaks -y")
+            }
+            function copycmd3() {
+                navigator.clipboard.writeText("sudo apt install gnome-themes-extra -y");
+                alert("Copied sudo apt install gnome-themes-extra -y")
+            }
+            function copycmd4() {
+                navigator.clipboard.writeText("gnome-tweaks");
+                alert("Copied gnome-tweaks")
+            }
+            function copycmd5() {
+                navigator.clipboard.writeText("sudo apt install darkcold-gtk-theme -y");
+                alert("Copied sudo apt install darkcold-gtk-theme -y")
+            }
+            function copycmd6() {
+                navigator.clipboard.writeText("sudo apt install darkmint-gtk-theme -y");
+                alert("Copied sudo apt install darkmint-gtk-theme -y")
+            }
+            function copycmd7() {
+                navigator.clipboard.writeText("sudo apt install darkblood-gtk-theme -y");
+                alert("Copied sudo apt install darkblood-gtk-theme -y")
+            }
+            function copycmd8() {
+                navigator.clipboard.writeText("sudo apt install darkfire-gtk-theme -y");
+                alert("Copied sudo apt install darkfire-gtk-theme -y")
+            }
+            function copycmd9() {
+                navigator.clipboard.writeText("sudo apt install breeze -y");
+                alert("Copied sudo apt install breeze -y")
+            }
+            function copycmd10() {
+                navigator.clipboard.writeText("sudo apt install obsidian-icon-theme -y");
+                alert("Copied sudo apt install obsidian-icon-theme -y")
+            }
+            function copycmd11() {
+                navigator.clipboard.writeText("gsettings set org.gnome.desktop.interface color-scheme prefer-dark");
+                alert("Copied gsettings set org.gnome.desktop.interface color-scheme prefer-dark")
+            }
+            function copycmd12() {
+                navigator.clipboard.writeText("sudo apt install gnome-software -y");
+                alert("Copied sudo apt install gnome-software -y")
+            }
+        </script>
+        <style>
+            :root{
+                    --backcolor: rgb(0, 0, 50);
+                    --textcolor: rgb(218, 218, 218);
+                    --acolor: rgb(185, 15, 49);
+                    --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    --align: center;       
+                    --topbackground: black;
+                    --linkcolor: rgb(0, 215, 215);
+                    }
+                body{
+                    background-color: var(--backcolor);
+                    color: var(--textcolor);
+                    text-align: var(--align);
+                    font-family: var(--font);
+                    border: var(--borders);
+                    margin-left: 2.5%;
+                    margin-right: 2.5%;
+                }
+                #topper{
+                    background-color: var(--topbackground);
+                    text-align: left;
+                    overflow: hidden;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: min-content;
+                    transition-duration: 0.5s;
+                }
+                #topper a{
+                    color: var(--textcolor);
+                    text-decoration: none;
+                    font-family: var(--font);
+                    margin-left: 4px;
+                    transition-duration: 0.5s;
+                }
+                #topper a:hover{
+                    background-color: darkblue;
+                    padding: 6px;
+                    padding-top: 19px;
+                    padding-bottom: 19px;
+                }
+                #clock {
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                }
+                .header{
+                    margin-top: 78px;
+                }
+                img{
+                    max-width: 550px;
+                }
+                .titletext{
+                    text-decoration: underline;
+                }
+                .list{
+                    display: inline-block;
+                    text-align: left;
+                    font-family: var(--font);
+                }
+                .divlist{
+                    text-align: center;
+                }
+                .copybutton{
+                    background-color: rgb(0, 0, 85);
+                    color: var(--textcolor);
+                    font-family: var(--font);
+                    text-decoration: none;
+                    padding: 6px 19px;
+                    border: var(--borders);
+                    cursor: pointer;
+                }
+        </style>
+    </head>
+    <body onload="gettime()">
+        <div id="topper">
+            <h3>
+            <a href="../HTML/Homepage.html">Home</a>
+            <a href="Linux_Setup_Guide.html">Linux Setup Guide</a>
+            <a href="../HTML/Powerwash_and_Recovery.html">Powerwash and Recovery</a>
+            <a href="../HTML/All_Guides.html">All Guides</a>
+            <a href="javascript:void(0)" onclick="Yourhere()"><span style="color: var(--acolor);">Dark Theme Guide</span></a>
+            <div id="clock"></div>
+            </h3>
+        </div>
+        <div class="header">
+            <h1 class="titletext">The Linux Gamers on Chromebook Co. Presents</h1>
+            <h2 class="titletext">How to Add a Dark Theme to Linux Apps</h2>
+        <noscript><b>Your Web Browser Doesn't Support JavaScript! Don't Worry, This Website Was Coded Simply So, You Don't Need Javascript. Some Animations Or Icons May Be Broken Though.</b></noscript>
+        </div>
+        <hr />
+        <div>
+            <h2 class="titletext">Description:</h2>
+            <p>This guide will help you to make most Linux apps display in a dark theme, you can also download other themes to make the apps look even more unique. Because of the way that the Linux VM works on Chrome OS, many apps will still have the default system theme. Also, many apps will still have a white titlebar at the top.</p>
+        </div>
+        <hr />
+        <div>
+            <p>Warning: This guide must be followed <b>carefully and precisely</b> because the risk for data loss and damage is large.</p>
+            <p>Warning 2: Do not follow this guide on a school, organization, or somebody else's computer unless you have permission.</p>
+        </div>
+        <div>
+            <h2 class="titletext">Requirements</h2>
+            <h3 class="titletext">Recommended Requirement:</h3>
+            <div class="listdiv">
+                <ul class="list">
+                    <li>A GNOME app &#10090;Calculator, Clocks, etc.,&#10091;</li>
+                </ul>
+            </div>
+            <h3 class="titletext">Mandatory Requirements:</h3>
+            <div class="listdiv">
+                <ul class="list">
+                    <li>Suitable internet connection, &#10090;not school wifi, your mobile hotspot or home's wifi &#10091;</li>
+                    <li>At least 5GB of free storage space in the Linux VM</li>
+                    <li>The Chrome OS Linux VM has to be set up, and updated</li>
+                    <li>At least 30 minutes of time.</li>
+                </ul>
+            </div>
+            <p><i>Note: Because of the way the Linux VM is run on Chrome OS there will still be many apps, and Linux window title bars that will remain in the default light theme.</i></p>
+        </div>
+        <hr />
+        <div>
+            <h2 class="titletext">Directions:</h2>
+            <h3 class="titletext">GNOME Tweaks</h3>
+            <p><i>Note: to paste commands into the terminal, just right-click the command line.</i></p>
+            <p>Step 1: Open up the linux terminal on your Chromebook and type in, &quot;sudo apt-get update -y&quot; and press enter.</p>
+            <button onclick="copycmd1()" class="copybutton">Copy &quot;sudo apt-get update -y&quot;</button>
+            <p>Step 2: Type into the terminal, &quot;sudo apt install gnome-tweaks -y&quot; and press enter. </p>
+            <button onclick="copycmd2()" class="copybutton">Copy &quot;sudo apt install gnome-tweaks -y&quot;</button>
+            <p>Step 3: Type into the terminal, &quot;sudo apt install gnome-themes-extra -y&quot; and press enter.</p>
+            <button onclick="copycmd3()" class="copybutton">Copy &quot;sudo apt install gnome-themes-extra -y&quot;</button>
+            <p>Step 4: Launch GNOME Tweaks by tpying into the terminal, &quot;gnome-tweaks&quot;.</p>
+            <button onclick="copycmd4()" class="copybutton">Copy &quot;gnome-tweaks&quot;</button>
+            <p><i>Note: Remember this command so that you can change the theme as well as other appearence settings in the future.</i></p>
+            <p>Step 5: In the window that launches,</p> 
+            <div class="listdiv">
+                <ol type="A" class="list">
+                    <li>Click on, &quot;Appearence&quot;</li>
+                    <li>Accross from, &quot;Legacy Applications&quot; click on the dropdown and select, &quot;HighContrastInverse&quot; for the dark theme</li>
+                </ol>
+            </div>
+            <img src="../IMAGES/imaged1.png" width="55%" alt="dark theme pic">
+            <p>Step 6:</p>
+            <div class="listdiv">
+                <ol type="A" class="list">
+                    <li>Click on, &quot;Fonts&quot;.</li>
+                    <li>Select full hinting &#10090;makes text easier to read&#10091;</li>
+                    <li>Select none for antialiasing &#10090;makes text clearer on screen&#10091;</li>
+                </ol>
+            </div>
+            <img src="../IMAGES/imaged2.png" width="55%" alt="font adjust pic">
+            <p><i>Note: For all settings to apply you have to reboot the Linux VM &#10090;right-click on terminal icon and select, &quot;Shut Down Linux&quot;, then reopen the terminal&#10091;</i></p>
+            <h2 class="titletext">More Theme Packs:</h2>
+            <div class="listdiv">
+                <ul class="list">
+                    <li>Darkcold; A black and blue theme for legacy apps, &quot;sudo apt install darkcold-gtk-theme -y&quot;</li>
+                        <ul><li><button onclick="copycmd5()" class="copybutton">Copy &quot;sudo apt install darkcold-gtk-theme -y&quot;</button></li></ul>
+                    <li>Darkmint; A black and green theme for legacy apps, &quot;sudo apt install darkmint-gtk-theme -y&quot;</li>
+                        <ul><li><button onclick="copycmd6()" class="copybutton">Copy &quot;sudo apt install darkmint-gtk-theme -y&quot;</button></li></ul>
+                    <li>Darkblood; A black and red theme for legacy apps, &quot;sudo apt install darkblood-gtk-theme -y&quot;</li>
+                        <ul><li><button onclick="copycmd7()" class="copybutton">Copy &quot;sudo apt install darkblood-gtk-theme -y&quot;</button></li></ul>
+                    <li>Darkfire; A black and amber theme for legacy apps, &quot;sudo apt install darkfire-gtk-theme -y&quot;</li>
+                        <ul><li><button onclick="copycmd8()" class="copybutton">Copy &quot;sudo apt install darkfire-gtk-theme -y&quot;</button></li></ul>
+                    <li>Breeze; The default Debian GUI theme, &quot;sudo apt install breeze -y&quot;</li>
+                        <ul><li><button onclick="copycmd9()" class="copybutton">Copy &quot;sudo apt install breeze -y&quot;</button></li></ul>
+                    <li>Obsidian; A modern and clean icon theme pack, &quot;sudo apt install obsidian-icon-theme -y&quot;</li>
+                        <ul><li><button onclick="copycmd10()" class="copybutton">Copy &quot;sudo apt install obsidian-icon-theme -y&quot;</button></li></ul>
+                </ul>
+            </div>
+        </div>
+        <hr />
+        <div>
+            <h2 class="titletext">Set Linux to Request a Dark Theme:</h2>
+            <p>Open the terminal and type in this command, &quot;gsettings set org.gnome.desktop.interface color-scheme prefer-dark&quot; and press enter. &#10090;This applies immediately, so you don't need to do anything after this&#10091;</p>
+            <button onclick="copycmd11()" class="copybutton">Copy &quot;gsettings set org.gnome.desktop.interface color-scheme prefer-dark&quot;</button>
+            <br />
+            <p>This command sets Linux to automatically turn on a dark theme in an app, if it supports it. Most modern apps like Firefox or Chrome support this, but other apps like Boxy SVG don&rsquo;t.</p>
+        </div>
+        <hr />
+        <div>
+            <h2 class="titletext">How to Get Apps that Support the Dark Theme:</h2>
+            <p>GNOME has an appstore called &quot;GNOME Software&quot;. This appstore has a user friendly interface, so it is easy to download and install apps from it. All of GNOME&rsquo;s apps are there too.</p>
+            <p>To install GNOME&rsquo;s appstore follow <a href="../HTML/GNOME_Appstore_Guide.html" style="color: var(--linkcolor);">this guide</a>.</p>
+        </div>
+        <hr />
+        <div>
+            <h2 class="titletext">How to Make the Titlebars Dark:</h2>
+            <p><i>Note: This only works for apps that have a dark theme and can use their own titlebars, if these parameters aren&rsquo;t met then the titlebar will default to wight.</i></p>
+            <p>Step 1: Right-click near the titlebar, if the top of the app has the File, Edit, etc., right-click the empty space just after these options in the same row. If its a web-browser like Chrome right-click empty space for tabs &#10090;may need to make another window&#10091;. If a options list pops up look for a selection the says something about system titlebars or borders. Deselect it if it's there, if not go to step 2.</p>
+            <p>Step 2: Go to the in-app settings. Look for appearence or theme settings, if it has a search option search, &quot;titlebar&quot;. If a setting for titlebars pops up, set it to custom or deselect it from using system theme. If either of these steps can't be completed, you have to live with the wight titlebar because there is no way to change it quickly, safely, or easily.</p>
+        </div>
+        <hr />
+        <p>Have fun with the dark theme!</p>
+        <br />
+        <a href="#top" class="copybutton">Top of Page</a>
+        <br />
+        <br />
+        <h5>Google owns the right to the name "Chromebook"</h5>
+    </body>
+</html>

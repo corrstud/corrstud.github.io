@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LGC Linux Setup Guide</title>
+        <link rel="icon" type="image/x-icon" href="../IMAGES/favicon.svg" />
+        <meta name="theme-color" content="#000037" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+            function Yourhere() {
+                alert("You're here")
+            }
+            var oldscrollyvar = window.pageYOffset;
+                window.onscroll = function(){
+                    var nowscrollyvar = window.pageYOffset;
+                    if (oldscrollyvar > nowscrollyvar) {
+                        document.getElementById("topper").style.top = "0";
+                    }
+                    else {
+                        document.getElementById("topper").style.top = "-65px";
+                    }
+                    oldscrollyvar = nowscrollyvar;
+                }
+             function gettime() {
+                 const time = new Date();
+                 let m = time.getMinutes();
+                 let h = time.getHours();
+                 m = updatetime(m)
+                 document.getElementById("clock").innerHTML= h+":"+m;
+                 setTimeout(gettime, 1000);
+            }
+            function updatetime(o) {
+                if (o<10) {o="0"+o};
+                return o;
+            }
+            function cmdcopy1() {
+                navigator.clipboard.writeText("sudo apt-get dist-upgrade -y")
+                alert("Copied sudo apt-get dist-upgrade -y")
+            }
+            function cmdcopy2() {
+                navigator.clipboard.writeText("sudo apt-get upgrade -y")
+                alert("Copied sudo apt-get upgrade -y")
+            }
+            function cmdcopy3() {
+                navigator.clipboard.writeText("sudo apt install flatpak")
+                alert("Copied sudo apt-get dist-upgrade -y")
+            }
+            function cmdcopy4() {
+                navigator.clipboard.writeText("flatpak --user remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flartpakrepo")
+                alert("Copied flatpak --user remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo")
+            }
+            function cmdcopy5() {
+                navigator.clipboard.writeText("flatpak install flathub org.mozilla.firefox -y")
+                alert("Copied flatpak install flathub org.mozilla.firefox -y")
+            }
+        </script>
+        <style>
+          :root{
+                --backcolor: rgb(0, 0, 50);
+                --textcolor: rgb(218, 218, 218);
+                --elementcolor: rgb(165, 165, 165);
+                --acolor: rgb(185, 15, 49);
+                --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                --align: center;       
+                --topbackground: black;
+                --linkcolor: rgb(0, 215, 215);
+                    }
+                body{
+                    background-color: var(--backcolor);
+                    color: var(--textcolor);
+                    text-align: var(--align);
+                    font-family: var(--font);
+                    border: var(--borders);
+                    margin-left: 2.5%;
+                    margin-right: 2.5%;
+                }
+                #topper{
+                    background-color: var(--topbackground);
+                    text-align: left;
+                    overflow: hidden;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: min-content;
+                    transition-duration: 0.5s;
+                }
+                #topper a{
+                    color: var(--textcolor);
+                    text-decoration: none;
+                    font-family: var(--font);
+                    margin-left: 4px;
+                    transition-duration: 0.5s;
+                }
+                #topper a:hover{
+                    background-color: darkblue;
+                    padding: 6px;
+                    padding-top: 19px;
+                    padding-bottom: 19px;
+                }
+                #clock {
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                }
+                .header{
+                    margin-top: 78px;
+                }
+                .list{
+                    text-align: left;
+                    margin-left: 30%;
+                    margin-right: 30%;
+                    width: 40%;
+                }
+                .titletext{
+                    text-decoration: underline;
+                }
+                img{
+                    max-width: 550px;
+                }
+                table, th, td{
+                    border-style: solid;
+                    border-width: 1px;
+                    border-color: var(--elementcolor);
+                    border-collapse: collapse;
+                    padding: 3px;
+                }
+                table{
+                    width: 30%;
+                    height: auto;
+                    margin-left: 35%;
+                    margin-right: 35%;
+                    text-align: var(--align);
+                    text-size-adjust: larger;
+                }
+                tr:nth-child(odd){
+                    background-color: rgb(0, 0, 85);
+                }
+                tr:hover{
+                    background-color: rgb(120, 0, 0);
+                    border-style: dashed;
+                }  
+                .copybutton{
+                    background-color: rgb(0, 0, 85);
+                    color: var(--textcolor);
+                    font-family: var(--font);
+                    text-decoration-style: none;
+                    padding: 6px 19px;
+                    border: var(--borders);
+                    cursor: pointer;
+                }
+        </style>
+    </head>
+    <body onload="gettime()">
+        <div id="topper">
+            <h3>
+            <a href="../HTML/Homepage.html">Home</a>
+            <a href="javascript:void(0)" onclick="Yourhere()"><span style="color: var(--acolor);">Linux Setup Guide</span></a>
+            <a href="../HTML/Powerwash_and_Recovery.html">Powerwash and Recovery</a>
+            <a href="../HTML/All_Guides.html">All Guides</a>
+            <div id="clock"></div>
+            </h3>
+        </div>
+        <div class="header">
+            <h1 class="titletext">The Linux Gamers on Chromebook Co. Presents</h1>
+                <h2 class="titletext">How to Set Up the Linux VM on Your Chromebook:</h2>
+        <noscript><b>Your Web Browser Doesn't Support JavaScript! Don't Worry, This Website Was Coded Simply So, You Don't Need Javascript. Some Animations Or Icons May Be Broken Though.</b></noscript>
+        </div>
+        <hr />
+        <div>
+            <h2 class="titletext">Description:</h2>
+            <p>This is how to set up the Linux VM on your Chromebook. In this guide you will install and app store for Linux called Flatpak. Please note that there is no direct user interface for the Linux VM, you only get the command line. Soon, a guide for installing a UI for the Linux VM will be made.</p>
+        </div>
+        <hr />
+        <div>
+            <h2 class="titletext">Determine if Your Chromebook has Linux Support:</h2>
+            <p>You need to press Ctrl+Search&#10090;key with magnifying glass&#10091;+Esc and find what the app says your CPU is.</p>
+            <img src="../IMAGES/imagel1.png" width="60%"  alt="cpu info pic">
+            <p>The text circled in blue is where you find this information. The brand is underlined in red. Look at the table below to find out how likely your Chromebook is supported.</p>
+            <table class="table">
+                <tr>
+                    <td>CPU Brand:</td>
+                    <td>CPU Type:</td>
+                    <td>Linux Support:</td>
+                </tr>
+                <tr>
+                    <td>Intel</td>
+                    <td>x86_64</td>
+                    <td>Most Chromebooks</td>
+                </tr>
+                <tr>
+                    <td>AMD</td>
+                    <td>x86_64</td>
+                    <td>Most Chromebooks</td>
+                </tr>
+                <tr>
+                    <td>Qualcomm</td>
+                    <td>ARM</td>
+                    <td>No Support</td>
+                </tr>
+                <tr>
+                    <td>MediaTek</td>
+                    <td>ARM</td>
+                    <td>No Support</td>
+                </tr>
+            </table>
+            <p><i>Note: If your CPU qualifies as not supported, STOP NOW. Your Chromebook doesn't support Linux, this guide CANNOT BE COMPLETED. If any other guide states that it requires Linux to be set up, it CANNOT BE COMPLETED either.</i></p>
+        </div>
+        <hr />
+        <div>
+            <h2 class="titletext">Part 1: Setup Linux Terminal</h2>
+            <p>Step 1: Open the launcher with the search key, then find and open an app called, &quot;terminal&quot;.</p>
+            <img src="../IMAGES/imagel2.png" width="43%" alt="terminal app location pic">
+            <p>Step 2: Click on the circled button, it should say, &quot;Set up&quot;. If the button says, &quot;Manage&quot; skip to step 4.</p>
+            <img src="../IMAGES/imagel3.png" width="43%" alt="termianl app pic">
+            <p>Step 3: Click on, &quot;Set up&quot; and during the setup give it a little more than half-way on the slider for storage capacity. You can resize the storage later in the linux terminal settings.</p>
+            <p><i>Note: Make sure that you have at least 10GB of storage for the Linux VM. If you don't have the ability set it higher than 10, you need to delete unneccessary apps, photos, and/or videos from your device to free up space.</i></p>
+            <img src="../IMAGES/imagel4.png" width="45%" alt="setup button pic">
+            <p>Step 4: Once it finishes, open the command line by clicking on, &quot;Penguin&quot; in the terminal app.</p>
+            <img src="../IMAGES/imagel5.png" width="45%" alt="command line location pic">
+            <p>Step 5: Type in, &quot;sudo apt-get dist-upgrade -y&quot; and press enter.</p>
+            <button onclick="cmdcopy1()" class="copybutton">Copy &quot;sudo apt-get dist-upgrade -y&quot;</button>
+            <p><i>Tip: To paste commands in to the command line, just right-click.</i></p>
+            <hr />
+            <h2 class="titletext">Part 2: Installing the Flathub Appstore</h2>
+            <p>Step 1: Open the terminal and type in, &quot;sudo apt-get upgrade -y&quot; and press enter.</p>
+            <button onclick="cmdcopy2()" class="copybutton">Copy, &quot;sudo apt-get upgrade -y&quot;</button>
+            <p>Step 2: Type in, &quot;sudo apt install flatpak -y&quot; and press enter.</p>
+            <button onclick="cmdcopy3()" class="copybutton">Copy &quot;sudo apt install flatpak&quot;</button>
+            <p>Step 3: To make sure you have the Flathub repository, type in, &quot;flatpak --user remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo&quot;</p>
+            <button onclick="cmdcopy4()" class="copybutton">Copy &quot;flatpak --user remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo&quot;;</button>
+            <p><i>Note: It is normal for this command to return no results, it changes a setting and checks if you have the right files, if you don&rsquo;t have the right files it will download and install the correct ones.</i></p>
+            <p>Info source: <a href="https://flathub.org/setup/Chrome%20OS" target="_blank" style="color: var(--linkcolor);">flathub.com</a></p>
+            <hr />
+            <h2 class="titletext">Part 3: Installing the Main Linux Web Browser:</h2>
+            <p>To be able to install and run some apps, Linux needs a web browser. Firefox is the best web browser for Linux, but after you install Firefox you can install other web browsers like Chrome or Edge if you perfer.</p>
+            <p>Step 1: Open the terminal, and type in, &quot;sudo apt-get upgrade -y&quot; and press enter.</p>
+            <button onclick="cmdcopy2()" class="copybutton">Copy &quot;sudo apt-get upgrade -y&quot;</button>
+            <p>Step 2: Type in, &quot;flatpak install flathub org.mozilla.firefox -y&quot; and press enter.</p>
+            <button onclick="cmdcopy5()" class="copybutton">Copy &quot;flatpak install flathub org.mozilla.firefox -y&quot;</button>
+            <p>Step 3: Once it finishes, open the launcher and look for an app called, &quot;Firefox&quot; under, &quot;Linux Apps&quot;, the click on it.</p>
+            <p>Step 4: Right-click on the icon for Firefox and select, &quot;Pin&quot;, you will need Firefox frequentally if you plan on installing a lot of Linux apps.</p>
+            <p>Step 5: Open Firefox, then open a new tab. Click on the cog-shaped settings icon. Then click on, &quot;Manage more settings&quot;.</p>
+            <img src="../IMAGES/imagel6.png" width="50%" alt="settings icon pic">
+            <footer><i>Note: Sensitive info has been blacked out, and there is a dark theme applied to the browser.</i></footer>
+            <p>Step 6: Type, &quot;file&quot; into the searchbar. Then enable, &quot;Always ask you where to save files&quot;.</p>
+            <img src="../IMAGES/imagel7.png" width="50%" alt="enable setting pic">
+            <footer><i>Note: Sensitive info has been blacked out, and there is a dark theme applied to the browser.</i></footer>
+            <p>Now you should be ready to go, if you want review the secuity settings for Firefox. Also make sure to make it the default browser &#10090;this is just for the Linux VM, it doesn't affect the Chrome browser that came with your Chromebook&#10091;.</p>
+            <hr />
+        </div>
+        <br />
+        <a href="#top" class="copybutton" style="text-decoration: none;">Top of Page</a>
+        <br />
+        <br />
+        <h5>Google owns the right to the name "Chromebook"</h5>
+    </body>
+</html>

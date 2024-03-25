@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LGC Gimp Guide</title>
+        <link rel="icon" type="image/x-icon" href="../IMAGES/favicon.svg" />
+        <meta name="theme-color" content="#000037"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+            function Yourhere() {
+                alert("You're here")
+            }
+            var oldscrollyvar = window.pageYOffset;
+                window.onscroll = function(){
+                    var nowscrollyvar = window.pageYOffset;
+                    if (oldscrollyvar > nowscrollyvar) {
+                        document.getElementById("topper").style.top = "0";
+                    }
+                    else {
+                        document.getElementById("topper").style.top = "-65px";
+                    }
+                    oldscrollyvar = nowscrollyvar;
+                }
+            function gettime() {
+                const time = new Date();
+                let m = time.getMinutes();
+                let h = time.getHours();
+                m = updatetime(m)
+                document.getElementById("clock").innerHTML= h+":"+m;
+                 setTimeout(gettime, 1000);
+            }
+            function updatetime(o) {
+                if (o<10) {o="0"+o};
+                return o;
+            }
+            function copycmd1() {
+                navigator.clipboard.writeText("sudo apt-get upgrade -y")
+                alert("Copied sudo apt-get upgrade -y")
+            }
+            function copycmd2() {
+                navigator.clipboard.writeText("sudo apt install gimp -y")
+                alert("Copied sudo apt install gimp -y")
+            }
+        </script>
+        <style>
+                :root{
+                    --backcolor: rgb(0, 0, 50);
+                    --textcolor: rgb(218, 218, 218);
+                    --acolor: rgb(185, 15, 49);
+                    --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    --align: center;       
+                    --topbackground: black;
+                    }
+                body{
+                    background-color: var(--backcolor);
+                    color: var(--textcolor);
+                    text-align: var(--align);
+                    font-family: var(--font);
+                    border: var(--borders);
+                    margin-left: 2.5%;
+                    margin-right: 2.5%;
+                }
+                #topper{
+                    background-color: var(--topbackground);
+                    text-align: left;
+                    overflow: hidden;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: min-content;
+                    transition-duration: 0.5s;
+                }
+                #topper a{
+                    color: var(--textcolor);
+                    text-decoration: none;
+                    font-family: var(--font);
+                    margin-left: 4px;
+                    transition-duration: 0.5s;
+                }
+                #topper a:hover{
+                    background-color: darkblue;
+                    padding: 6px;
+                    padding-top: 19px;
+                    padding-bottom: 19px;
+                }
+                #clock {
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                }
+                .header{
+                    margin-top: 78px;
+                }
+                img{
+                    max-width: 600px;
+                }
+                .titletext{
+                    text-decoration: underline;
+                }
+                .list{
+                    display: inline-block;
+                    text-align: left;
+                    font-family: var(--font);
+                }
+                .list{
+                    display: inline-block;
+                    text-align: left;
+                    font-family: var(--font);
+                }
+                .divlist{
+                    text-align: center;
+                }
+                .copybutton{
+                    background-color: rgb(0, 0, 85);
+                    color: var(--textcolor);
+                    font-family: var(--font);
+                    text-decoration: none;
+                    padding: 6px 19px;
+                    border: var(--borders);
+                    cursor: pointer;
+                }
+        </style>
+    </head>
+    <body onload="gettime()">
+        <div id="topper">
+            <h3>
+            <a href="../HTML/Homepage.html">Home</a>
+            <a href="Linux_Setup_Guide.html">Linux Setup Guide</a>
+            <a href="../HTML/Powerwash_and_Recovery.html">Powerwash and Recovery</a>
+            <a href="../HTML/All_Guides.html">All Guides</a>
+            <a href="javascript:void(0)" onclick="Yourhere()"><span style="color: var(--acolor);">Gimp Install Guide</span></a>
+            <div id="clock"></div>
+            </h3>
+        </div>
+        <div class="header">
+            <h1 class="titletext">The Linux Gamers on Chromebook Co. Presents</h1>
+            <h2 class="titletext">How to Install Gimp on your Chromebook</h2>
+        <noscript><b>Your Web Browser Doesn't Support JavaScript! Don't Worry, This Website Was Coded Simply So, You Don't Need Javascript. Some Animations Or Icons May Be Broken Though.</b></noscript>
+        </div>
+        <hr />
+        <div>
+            <p>Warning: Make sure to follow this guide thoroughly, failure to do so may result in irrecoverable damage to your data. This is highly unlikely to happen though but follow the guide thoroughly.</p>
+            <p><b>Warning 2:</b> <b>Do not use or follow this guide if you are planning to use a school or organization owned device! Do not use or follow this guide on a device you do not have permission to modify!</b></p>
+        </div>
+        <hr />
+        <div>
+            <h2 class="titletext">Description:</h2>
+            <p>Gimp is an open source photo editor. Gimp is very similar to Adobe Photoshop, though it has fewer features it is an excellent photo editor for basic projects. Gimp runs well on most hardware, and it is free to use.</p>
+        </div>
+        <hr />
+        <div>
+            <h2 class="titletext">Requirements:</h2>
+            <h3 class="titletext">Recommended Requirements:</h3>
+            <p>Press Ctrl+Search+Esc to find this:</p>
+            <div class="divlist">
+                <ul class="list">
+                    <li>4GB+ RAM</li>
+                    <li>Dual-core Intel or AMD CPU at a minimum of 2.50 GHz</li>
+                </ul>
+            </div>
+            <h3 class="titletext">Mandatory Requirements:</h3>
+            <div class="divlist">
+                <ul class="list">
+                    <li>Linux VM set up, and updated</li>
+                    <li>8GB+ of free storage in Linux VM</li>
+                    <li>15 minutes of time</li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+        <div>
+            <h2 class="titletext">Directions:</h2>
+            <p>Step 1: Open the terminal and type in, &quot;sudo apt-get upgrade -y&quot; and press enter.</p>
+            <button class="copybutton" onclick="copycmd1()">Copy &quot;sudo apt-get upgrade -y&quot;</button>
+            <p><i>Tip: To paste commands into the command line, just right-click</i></p>
+            <p>Step 2: Type in, &quot;sudo apt install gimp -y&quot; and press enter.</p>
+            <button class="copybutton" onclick="copycmd2()">Copy &quot;sudo apt install gimp&quot;</button>
+            <p>Step 3: Open the Chrome OS files app. Right-click on any image you have and select, &quot;Open with...&quot; and then, &quot;change default&quot;.</p>
+            <img src="../IMAGES/imagegB1.png" width="55%" alt="change default in files pic">
+            <p>Step 4: Select, &quot;GNU Manipulation Program&quot;, this sets your Chromebook to use Gimp to open an image by default. You can always right-click, select &quot;Open with&quot; and choose a different app to open your images.</p>
+            <img src="../IMAGES/imagegB2.png" width="50%" alt="select GNU pic">
+        </div>
+        <hr />
+        <br />
+        <a href="#top" class="copybutton">Top of Page</a>
+        <br />
+        <br />
+        <h5>Google owns the right to the name "Chromebook"</h5>
+    </body>
+</html>

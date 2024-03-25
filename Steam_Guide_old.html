@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>LGC Old Steam Install Guide</title>
+            <link rel="icon" type="image/x-icon" href="../IMAGES/favicon.svg" />
+            <meta name="theme-color" content="#000037" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <script>
+                function Yourhere() {
+                    alert("You're here")
+                }
+                var oldscrollyvar = window.pageYOffset;
+                window.onscroll = function(){
+                    var nowscrollyvar = window.pageYOffset;
+                    if (oldscrollyvar > nowscrollyvar) {
+                        document.getElementById("topper").style.top = "0";
+                    }
+                    else {
+                        document.getElementById("topper").style.top = "-65px";
+                    }
+                    oldscrollyvar = nowscrollyvar;
+                }
+                function gettime() {
+                    const time = new Date();
+                    let m = time.getMinutes();
+                    let h = time.getHours();
+                    m = updatetime(m)
+                    document.getElementById("clock").innerHTML= h+":"+m;
+                    setTimeout(gettime, 1000);
+                }
+                function updatetime(o) {
+                    if (o<10) {o="0"+o};
+                    return o;
+                }
+                function copycmd1() {
+                    navigator.clipboard.writeText("lsb_release -a")
+                    alert("Copied lsb_release -a")
+                }
+            </script>
+            <style>
+                :root{
+                    --backcolor: rgb(0, 0, 50);
+                    --textcolor: rgb(218, 218, 218);
+                    --acolor: rgb(185, 15, 49);
+                    --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    --align: center;
+                    --topbackground: black;
+                    --linkcolor: rgb(0, 215, 215);
+                    }
+                body{
+                    background-color: var(--backcolor);
+                    color: var(--textcolor);
+                    text-align: var(--align);
+                    font-family: var(--font);
+                    border: var(--borders);
+                    margin-left: 2.5%;
+                    margin-right: 2.5%;
+                }
+                #topper{
+                    background-color: var(--topbackground);
+                    text-align: left;
+                    overflow: hidden;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: min-content;
+                    transition-duration: 0.5s;
+                }
+                #topper a{
+                    color: var(--textcolor);
+                    text-decoration: none;
+                    font-family: var(--font);
+                    margin-left: 4px;
+                    transition-duration: 0.5s;
+                }
+                #topper a:hover{
+                    background-color: darkblue;
+                    padding: 6px;
+                    padding-top: 19px;
+                    padding-bottom: 19px;
+                }
+                #clock {
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                }
+                .header{
+                    margin-top: 78px;
+                }
+                img{
+                    max-width: 600px;
+                }
+                .titletext{
+                    text-decoration: underline;
+                }
+                .list{
+                    display: inline-block;
+                    text-align: left;
+                    font-family: var(--font);
+                }
+                .divlist{
+                    text-align: center;
+                }
+                .copybutton{
+                    background-color: rgb(0, 0, 85);
+                    color: var(--textcolor);
+                    text-decoration: none;
+                    padding: 6px 19px;
+                    border: var(--borders);
+                    cursor: pointer;
+                }
+            </style>
+        </head>
+        <body onload="gettime()">
+            <div id="topper">
+                <h3>
+                <a href="../HTML/Homepage.html">Home</a>
+                <a href="Linux_Setup_Guide.html">Linux Setup Guide</a>
+                <a href="../HTML/Powerwash_and_Recovery.html">Powerwash and Recovery</a>
+                <a href="../HTML/All_Guides.html">All Guides</a>
+                <a href="javascript:void(0)" onclick="Yourhere()"><span style="color: var(--acolor);">Old Steam Install Guide</span></a>
+                <div id="clock"></div>
+                </h3>
+            </div>
+            <div class="header">
+                    <h1 class="titletext">The Linux Gamers on Chromebooks Co.</h1>
+                    <h2 class="titletext">How to Install Desktop Steam on Chromebook</h2>
+                <noscript><b>Your Web Browser Doesn't Support JavaScript! Don't Worry, This Website Was Coded Simply So, You Don't Need Javascript. Some Animations Or Icons May Be Broken Though.</b></noscript>
+                </div>
+            <hr />
+            <div>
+                <p><b><u>Warning: This is an old guide that will not work in most cases. If you are using Debian 11, this guide will work but it won&rsquo;t work on Debian 12. If you are on Debian 12, follow this <a href="../HTML/Steam_Guide.html" style="color: var(--linkcolor);">Steam install guide</a>.</u></b></p>
+                <p>Warning 2: Do not use or follow this guide if you are planning to use a school or organization owned device! Do not use or follow this guide on a device you do not have permission to modify!</p>
+            </div>
+            <hr />
+            <div>
+                <h2 class="titletext">Description:</h2>
+                <p>This is a legacy guide, it only works if your Linux VM is on Debian 11. Find this by typing into the terminal, &quot;lsb_release -a&quot;, if it says Debian 12 <b>DO NOT FOLLOW THIS GUIDE</b>. This guide will help you install desktop Steam onto your Chromebook, it is also the only way to install Steam on your Chromebook if you have less than 8GB of RAM and 128GB of storage.</p>
+                <button class="copybutton" onclick="copycmd1()">Copy, &quot;lsb_release -a&quot;</button>
+            </div>
+            <hr />
+            <div>
+                <h2 class="titletext">Requirements:</h2>
+                <h3 class="titletext">Find this by pressing CTRL + Search + ESC:</h3>
+                <h4>Minimum Recommended Hardware:</h4>
+                <ul class="list">
+                    <li>64 GB storage</li>
+                    <li>Dual-core Intel or AMD CPU at a minimum of 2.50 GHz </li>
+                </ul>
+                <h4>Mandatory Requirements:</h4>
+                <div class="listdiv">
+                    <ul class="list">
+                        <li>16 GB free storage</li>
+                        <li>4 GB ram</li>
+                        <li>Suitable Internet connection &#10090;i.e., home Wi-Fi or mobile hotspot [not <i>school</i> internet because all necessary Steam servers are blocked]&#10091;</li>
+                    </ul>
+                </div>
+            </div>
+            <hr />
+            <div>
+                <h4 class="titletext">Preparation:</h4>
+                <div class="listdiv">
+                    <ol class="list">
+                        <li>Make sure the Linux terminal is setup by following the <a href="../HTML/Linux_Setup_Guide.html" style="color: var(--linkcolor);">Linux Setup Guide</a>. Also, this guide only works on Debian 11, if you are on Debian 12 follow this <a href="../HTML/Steam_Guide.html" style="color: var(--linkcolor);">Steam Install Guide</a>.</li>
+                        <li>Charge your battery to a minimum of 75% so you have enough power to complete this process.</li>
+                        <li>Use a suitable network connection, school Wi-Fi CANNOT be used, connect to a mobile hotspot or your home&rsquo;s Wi-Fi.</li>
+                        <li>If you have any important file(s) plug in an external storage device like a USB thumb drive and copy those files into a marked folder on the external device. If you don&rsquo;t have access to an external storage device, you can back up your files to a cloud storage service.</li>
+                        <li>Remove any external storage device from your computer (i.e., USB flash drives or SD cards). This is to prevent data loss, you can leave any peripherals attached (i.e., a mouse, a keyboard, and/or a monitor).</li>
+                        <li>Use a personal account, the school can monitor you if you use your school account. If you don&rsquo;t have the option to add an account from the login screen, you need to power wash your computer.</li>
+                    </ol>
+                </div>
+            </div>
+            <hr />
+            <div>
+                <h3 class="titletext">Directions</h3>
+                <p>Step 1: Go to <a href="https://store.steampowered.com/about/" style="color: var(--linkcolor);">Steam Download Page</a> <b>using Firefox</b> and download the Steam setup file, make sure you remember what folder the file is saved to. The Steam download page automatically detect the operating system so, to get the proper install version you must use Firefox, if you use Chrome the Steam download page will give you the wrong install file or not even let you download the install file at all.</p>
+                <p>Step 2: Open the Chrome OS file manager &#10090;app with the blue folder icon named, &quot;Files&quot;&#10091;, and find the donwload file under &quot;Linux Files&quot;</p>
+                <p>Step 3: Make sure the Steam install file ends with, &quot;.deb&quot;, and if so right-click it &#10090;tap the trackpad with 2 fingers at the same time&#10091; and click, &quot;Install with Linux&quot;. If the file ends with any other set of letters or you don't have the option to install with Linux, follow step 3b.</p>
+                <img src="../IMAGES/image5.png" width="52.5%" alt="install with Linux pic">
+                <p>Step 3b: &#10090;Skip this step if the file you downloaded ends with, &quot;.deb&quot;&#10091;.</p>
+                <div class="listdiv">    
+                    <ul class="list">
+                        <li>Make sure you are trying to download Steam using Firefox that was downloaded using Flathub &#10090;Instructions in Part 1&#10091;.</li>
+                        <li>Use you home's wifi or your mobile hotspot for internet.</li>
+                        <li>Make sure to go to Steam using the link provided in the guide.</li>
+                        <li>Wait an extra 10-15 minutes because the install file may not be done downloading.</li>
+                    </ul>
+                </div>
+                <p>Step 4: Once the install is complete, press the search key or the white circle at the bottom-left corner of the screen. Look for an app group called, &quot;Linux Apps&quot; and click it. Find a blue icon with a robot part that says, &quot;Steam&quot; and click on it. This may take some time but a window will pop-up.</p>
+                <p>Step 5: The window that will pop-up is going to be a terminal, but not the aforementioned one. The terminal will ask you if you want to install and configure various things. Press enter. Afterwards, just type, &quot;y&quot; and press enter whenever it prompts for it.</p>
+                <p><b>Important: Make sure that your Chromebook stays open, powered on, and conected to a suitable internet connection for the duration of the setup. Failure to provide these conditions for the setup may cause the Steam installation to be corrupted, or your Linux VM to be corrupted.</b></p>
+                <p>Step 6: Launch Steam and follow the prompts to finish the setup. If you don't already have a Steam account you can create a new one for free.</p>
+            </div>
+            <hr />
+            <div>
+                <p>And that's Steam installed, now you just need games, so we recommend <a href="https://store.steampowered.com/app/2281730/Combat_Master_Season_1/" style="color: var(--linkcolor);">Combat Masters</a>, and <a href="https://store.steampowered.com/app/1625450/Muck/" style="color: var(--linkcolor);">Muck</a>. If you have recommendations for more games that take less than 10 GB of storage and are supported by Linux, &#10090;shown by the Steam icon under supported operating systems&#10091;, email us at #</p>
+            </div>
+            <br />
+            <br />
+            <a href="#top" class="copybutton">Top of Page</a>
+            <br />
+        <br />
+        <h5>Google owns the right to the name "Chromebook"</h5>
+        </body>
+    </html>

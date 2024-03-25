@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+    <html>
+            <title>LGC Powerwash/Recover Guide</title>
+            <link rel="icon" type="image/x-icon" href="../IMAGES/favicon.svg" />
+            <meta name="theme-color" content="#000037" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <script>
+                function Yourhere() {
+                    alert("You're here")
+                }
+                var oldscrollyvar = window.pageYOffset;
+                window.onscroll = function(){
+                    var nowscrollyvar = window.pageYOffset;
+                    if (oldscrollyvar > nowscrollyvar) {
+                        document.getElementById("topper").style.top = "0";
+                    }
+                    else {
+                        document.getElementById("topper").style.top = "-65px";
+                    }
+                    oldscrollyvar = nowscrollyvar;
+                }
+                function gettime() {
+                    const time = new Date();
+                    let m = time.getMinutes();
+                    let h = time.getHours();
+                    m = updatetime(m)
+                    document.getElementById("clock").innerHTML= h+":"+m;
+                    setTimeout(gettime, 1000);
+                }
+                function updatetime(o) {
+                    if (o<10) {o="0"+o};
+                    return o;
+                }
+            </script>
+            <style>
+                :root{
+                    --backcolor: rgb(0, 0, 50);
+                    --textcolor: rgb(218, 218, 218);
+                    --acolor: rgb(185, 15, 49);
+                    --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    --align: center;
+                    --topbackground: black;
+                    --linkcolor: rgb(0, 215, 215);
+                    }
+                body{
+                    background-color: var(--backcolor);
+                    color: var(--textcolor);
+                    text-align: var(--align);
+                    font-family: var(--font);
+                    border: var(--borders);
+                    margin-left: 2.5%;
+                    margin-right: 2.5%;
+                }
+                #topper{
+                    background-color: var(--topbackground);
+                    text-align: left;
+                    overflow: hidden;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: min-content;
+                    transition-duration: 0.5s;
+                }
+                #topper a{
+                    color: var(--textcolor);
+                    text-decoration: none;
+                    font-family: var(--font);
+                    margin-left: 4px;
+                    transition-duration: 0.5s;
+                }
+                #topper a:hover{
+                    background-color: darkblue;
+                    padding: 6px;
+                    padding-top: 19px;
+                    padding-bottom: 19px;
+                }
+                #clock {
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                }
+                .header{
+                    margin-top: 78px;
+                }
+                img{
+                    max-width: 600px;
+                }
+                .titletext{
+                    text-decoration: underline;
+                }
+                hr{
+                    color: rgb(166, 166, 166);
+                }
+                .list{
+                    display: inline-block;
+                    text-align: left;
+                    font-family: var(--font);
+                }
+                .divlist{
+                    text-align: center;
+                }
+                .copybutton{
+                    background-color: rgb(0, 0, 85);
+                    color: var(--textcolor);
+                    font-family: var(--font);
+                    text-decoration: none;
+                    padding: 6px 19px;
+                    border: var(--borders);
+                    cursor: pointer;
+                }
+            </style>
+        </head>
+        <body onload="gettime()">
+            <div id="topper">
+                <h3>
+                <a href="../HTML/Homepage.html">Home</a>
+                <a href="../HTML/Linux_Setup_Guide.html">Linux Setup Guide</span></a>
+                <a href="javascript:void(0)" onclick="Yourhere()"><span style="color: var(--acolor);">Powerwash and Recovery</span></a>
+                <a href="../HTML/All_Guides.html">All Guides</a>
+                <div id="clock"></div>
+                </h3>
+            </div>
+            <div class="header">
+                <h1 class="titletext">The Linux Gamers on Chromebook Co. Presents</h1>
+                <h2 class="titletext">How to Powerwash/Recover your Chromebook</h2>
+            <noscript><b>Your Web Browser Doesn't Support JavaScript! Don't Worry, This Website Was Coded Simply So, You Don't Need Javascript. Some Animations Or Icons May Be Broken Though.</b></noscript>
+            </div>
+            <hr />
+            <div>
+                <p><b>Warning:</b> Following this guide <b><i><u>WILL DELETE ALL LOCAL DATA AND ACCOUNTS FROM YOUR DEVICE</u>.</i></b></p>
+                <p><b>Warning 2:</b> <i><u>Follow this guide thoroughly and make sure all requirements are met</u></i> to reduce the risk of bricking your Chromebook.
+                </p>
+                <p><b>Warning 3:</b> <u><b><i>DO NOT FOLLOW THIS GUIDE IF YOU ARE PLANNING TO USE A SCHOOL OR ORGANIZATION OWNED DEVICE!</i></b></u></p>
+                <p><i>Note: The term <u>&rsquo;&rsquo;powerwash&rsquo;&rsquo;</u> refers to just removing local accounts and data from your Chromebook. The term <u>&rsquo;&rsquo;recover&rsquo;&rsquo;</u> refers to removing all local accounts and data from your Chromebook, as well as removing the Chrome OS install and puts in a fresh one.</i></p>
+            </div>
+            <hr />
+            <div>
+                <h2 class="titletext">Description:</h2>
+                <p>This guide will show you how to Powerwash and/or Recover your Chromebook. This guide will help you solve a variety of issues, including but not limited to, parental controls, enterprise enrollment, system file corruption, app corruption, random chrases, random reboots, etc., Note that recovering your Chromebook is risky, if you don&rsquo;t think you can do it, try powerwashing it or contact a computer repair shop to have it done professionally.</p>
+            </div>
+            <hr />
+            <div>
+                <h3 class="titletext">Recommened Requirements:</h3>
+                <div class="listdiv">
+                    <ul class="list">
+                        <li>&#10090;optional unless you need to save important files&#10091; 8 GB+ USB thumb drive or 8 GB+ SD card</li>
+                        <li>&#10090;optional, unless you need to recover Chrome OS&#10091; An additional 8 GB+ USB thumb drive or 8 GB+ SD card</li>
+                    </ul>
+                </div>
+                <h3 class="titletext">Mandatory Requirements</h3>
+                <div class="listdiv">
+                    <ul class="list">
+                        <li>Suitable Internet connection &#10090;i.e., home Wi-Fi or mobile hotspot [not school internet because some cloud servers are blocked]&#10091;</li>
+                        <li>The charging cable that came with the computer, has to be plugged into the computer and wall outlet at all times to provide power during this process</li>
+                        <li>The battery must be charged to a minimum of 75%</li>
+                        <li>At least 15 minutes of free time if you are just power washing your Chromebook</li>
+                        <li>At least 45 minutes of free time if you are trying to recover your Chromebook</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <p><b>Warning:</b> If you are trying to recover your Chromebook and have a MediaTek or a Snapdragon CPU, you may not be able to make a recovery drive for your Chromebook, <b>STOP NOW</b>. Try powerwashing your computer instead. If you are just trying to Powerwash your Chromebook, you may continue.</p>
+                <p><b>Warning 2:</b> Some Chromebooks &#10090; with Intel/AMD x86 processors&#10091; may not be able to get a recovery image, this will be explained later, but if your Chromebook doesn&rsquo;t have recovery image support STOP and only try to powerwash your Chromebook. If the issues persist, get a new computer or have your Chromebook professionally serviced.</p>
+                <p><i>Note: We will not support you in physically servicing your Chromebook, we only help you navigate, modify, and troubleshoot the <b>software</b> on your Chromebook.</i></p>
+                <p><b><i>Important Warning: Following this guide WILL REMOVE ANY LOCAL FILES OR DATA, your Google account will retain its data, but it may not remember your device so you will have to log in again. The removal of local files and other data is normal and part of the process. Before proceeding with the guide, backup to an external USB or SD drive and to the cloud &#10090; Drive, Google 1, Dropbox, etc.,&#10091; any file&#10090;s&#10091; you wish to keep. If you choose not to back up your files, they will NOT be recoverable after this process.</i></b></p>
+            </div>
+            <hr />
+            <div>
+                <h2 class="titletext">Part 1: Determine what You Need to do</h2>
+                <p>Before you do anything to your Chromebook, you must look at the problems that are actively occurring. &#10090;TLDR, look at the issues on your computer&#10091;.</p>
+                <br>
+                <h2 class="titletext">Powerwash</h2>
+                <p>If you only need to Powerwash your Chromebook, the most common causes are low storage, some apps have strange errors, and/or your device has parental controls or has been enterprise enrolled causing you not to be able to do certain things. Note: If you are experiencing full system crashes or random apps and files are going missing being deleted you need to recover your Chromebook, powerwashing may not help.</p>
+                <hr>
+                    <img src="../IMAGES/imagep1.png" width="55%" alt="low storage pic">
+                    <p>Low Storage &#10090;This would make your computer slow, especially if you have less than 5gb available&#10091;, another solution is only available if this is the only issue you are experiencing, which is deleting photos, videos, apps, etc., you don&rsquo;t need.</p>
+                <hr>
+                <img src="../IMAGES/imagep2.png" width="45%" alt="app errors pic">
+                <p>Strange App Errors (Suitable internet connection is available but, the app thinks it is offline) this could be in the form of random crashes or getting stuck on loading screens as well as many other annoying issues.</p>
+                <hr>
+                <img src="../IMAGES/imagep3.png" width="45%" alt="Enterprise Enrolled pic">
+                <p>Parental Controls/Enterprise Enrollment &#10090;would say somewhere in the Chrome browser; usually in the menu that pops up under the three stacked dots in the top right corner&#10091; that the device is managed by your organization or by your parent.</p>
+                <hr>
+                <br>
+                <h2 class="titletext">Recovery</h2>
+                <p>Recovery is the way you reinstall Chrome OS on your Chromebook. This can fix persisting issues with the whole computer freezing or chrashing randomly. There is a greater risk of pernamently bricking your Chromebook if you go down this route. <b><u>FOLLOW THIS GUIDE THUOUGHLY, DO NOT IGNORE WARNINGS, AND DO NOT TRY TO DO ANYTHING OTHER THAN WHAT THE GUIDE TELLS YOU TO DO!</u></b></p>
+                <p><i>Note: We are not responsible for any unexpected data or property loss, only recover your Chromebook if powerwashing didn't fix it.</i></p>
+                <p><i>Note 2: If recovering your Chromebook doesn&rsquo;t fix your device, you need to have it physically serviced. There may be an issue with various components &#10090;storage, ram, cpu, etc,.&#10091;, so you need to take it to a computer repair shop. &#10090;A guide to picking the right repair shop will be made soon&#10091;.</i></p>
+                <p>Note 3: Try powerwashing your Chromebook first; maleware, spyware, virus, and/or corruption affecting one or more of your apps may be causing the problem.</p>
+            </div>
+            <br />
+            <hr />
+            <div>
+                <h2 class="titletext">Powerwash Directions</h2>
+                <p>There are two ways to powerwash your Chromebook. The first one involves going to settting to do this, but if your device has parental or orgazational controls this <b>will not work</b>. The other option is to go through the firmware to erase any local accounts or data.</p>
+                <p><b>Warning: Following this guide <u>erase all local accounts and data</u> from your device! Back up any important data, use a usb flash drive, google drive, or any other cloud storage solution.</b></p>
+                <hr>
+                <h3 class="titletext">In Chrome OS/Settings App</h3>
+                <p><i>Note: Use this if you don't have parental/organizational controls. If you do, use the other method below.</i></p>
+                <p>Open Chrome OS settings and navigate over to, &rsquo;&rsquo;Reset Settings&rsquo;&rsquo;. Click on reset and follow the instructions. Once your Chromebook has rebooted, log in and go to this option again in settings and click, &rsquo;&rsquo;reset&rsquo;&rsquo;. Allow the Chromebook to reset and set up the Chromebook for personal use. Make a new Gmail or use one that doesn't have parental or school restrictions. <b>Do not use a school email, or another email that you don't own.</b></p>
+                <img src="../IMAGES/imagep4.png" width="45%" alt="reset settings pic">
+                <hr>
+                <h3 class="titletext">Recovery Menu</h3>
+                <p>Step 1: Press Esc+Refresh+Power &#10090;power button&#10091;.</p>
+                <p>Step 2: Use the arrow keys to select, &rsquo;&rsquo;advanced options&rsquo;&rsquo; and press enter.</p>
+                <p>Step 3: Enable Developer Mode, and follow instructions to continue with Developer Mode.</p>
+                <p>Step 4: When your Chromebook boots up a again use the arrow keys to select, &rsquo;&rsquo;Return to secure mode&rsquo;&rsquo; and press enter.</p>
+                <p>Step 5: Set up your Chromebook for personal use. Make a new Gmail or use one that doesn't have parental or school restrictions. <b>Do not use a school email, or another email that you don't own.</b></p>
+                <br>
+            </div>
+            <hr />
+            <div>
+                <h2 class="titletext">Recovery Directions</h2>
+                <p><b>Warning: Following this guide <u>erase all local accounts and data</u> from your device! Back up any important data, use a usb flash drive, google drive, or any other cloud storage solution.</b></p>
+                <p>Step 1: Get the Chromebook Recovery Utility. Click <a href="https://chromewebstore.google.com/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm?hl=en" target="_blank" style="color: var(--linkcolor);">this link</a> using the Chrome browser that came original with your Chromebook. Select add to Chrome, and allow it to install.</p>
+                <p><i>Note: If parental or organizational controls are blocking you from getting this extension, you need to powerwash your Chromebook first to remove the blocks.</i></p>
+                <p>Note 2: If you need to backup your data, <b>do it now</b>, don't use the recovery drive, use a seperate USB or SD storage drive to copy your photos on to. Once it's done, eject it and remove it from your Chromebook.</p>
+                <p>Step 2: Find out what make and model of Chromebook you have. Do this by flipping the laptop over, and look for the model number. Google the model number, the search results should tell you what brand you have and it should tell you the model and submodel. For instance I have a Lenovo Flex 5 13.3" Chromebook.</p>
+                <p>Step 3: Open the recovery tool and insert a 8GB+ USB or SD storage drive. Click on next and then select the brand of your Chromebook. Scroll through the models until you find the one that matches your device ecactly. If you can&rsquo;t find it <b>STOP NOW!</b></p>
+                <p>Step 4: If you can get the correct recovery image, click on next. Select your storage drive and allow it to burn the recovery image in to it.</p>
+                <p>Step 5: Once its done, eject the drive and remove it from your Chromebook. Press esc+reload+power and wait for the recovery screen to appear.</p>
+                <p>Step 6: Use the arrow keys to select, &rsquo;&rsquo;Recover Using external storage&rsquo;&rsquo; and press enter.</p>
+                <p>Step 7: Plug in your Chromebook using the charger that came with it. Press enter until it asks you for the recovery drive.</p>
+                <p>Step 8: Insert the recovery drive and press enter. Follow the instructions. <b>Do not interupt this process! Doing so WILL BRICK YOUR DEVICE! Give your Chromebook plenty of time to finish! Do not unplug it!</b></p>
+                <p>Step 9: Once your Chromebook finishes, set it up for personal use. Make a new Gmail or use one that doesn't have parental or school restrictions. <b>Do not use a school email, or another email that you don't own.</b></p>
+            </div>
+            <hr />
+            <br />
+            <a href="#top" class="copybutton">Top of Page</a>
+            <br />
+            <br />
+            <h5>Google owns the right to the name "Chromebook"</h5>
+        </body>
+    </html>

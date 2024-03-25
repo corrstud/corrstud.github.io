@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>All Guides-LGC</title>
+        <link rel="icon" type="image/x-icon" href="../IMAGES/favicon.svg" />
+        <meta name="theme-color" content="#000037" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+            function Yourhere() {
+                alert("You're here")
+            }
+            function gettime() {
+                const time = new Date();
+                let m = time.getMinutes();
+                let h = time.getHours();
+                m = updatetime(m)
+                document.getElementById("clock").innerHTML= h+":"+m;
+                 setTimeout(gettime, 1000);
+            }
+            function updatetime(o) {
+                if (o<10) {o="0"+o};
+                return o;
+            }
+            var oldscrollyvar = window.pageYOffset;
+                window.onscroll = function(){
+                    var nowscrollyvar = window.pageYOffset;
+                    if (oldscrollyvar > nowscrollyvar) {
+                        document.getElementById("topper").style.top = "0";
+                    }
+                    else {
+                        document.getElementById("topper").style.top = "-65px";
+                    }
+                    oldscrollyvar = nowscrollyvar;
+                }
+            function searchinputscript() {
+                var input, filter, table, tr, td, i, searchvalue;
+                input = document.getElementById("searchinput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("allguidestable")
+                tr = table.getElementsByTagName("tr")
+                
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0];
+                    if (td) {
+                         searchvalue = td.searchContent || td.innerText;
+                         if (searchvalue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                         } 
+                         else {
+                            tr[i].style.display ="none"
+                         }
+                    }
+                }
+            }
+        </script>
+        <style>
+            :root{
+                    --backcolor: rgb(0, 0, 50);
+                    --textcolor: rgb(218, 218, 218);
+                    --elementcolor: rgb(165, 165, 165);
+                    --acolor: rgb(185, 15, 49);
+                    --tablebackground: rgb(0, 0, 35);
+                    --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    --align: center;       
+                    --topbackground: black;
+                    --linkcolor: rgb(0, 215, 215);
+                    }
+                body{
+                    background-color: var(--backcolor);
+                    color: var(--textcolor);
+                    text-align: var(--align);
+                    font-family: var(--font);
+                    border: var(--borders);
+                    margin-left: 2.5%;
+                    margin-right: 2.5%;
+                }
+                #topper{
+                    background-color: var(--topbackground);
+                    text-align: left;
+                    overflow: hidden;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: min-content;
+                    transition-duration: 0.5s;
+                }
+                #topper a{
+                    color: var(--textcolor);
+                    text-decoration: none;
+                    font-family: var(--font);
+                    margin-left: 4px;
+                    transition-duration: 0.5s;
+                }
+                #topper a:hover{
+                    background-color: darkblue;
+                    padding: 6px;
+                    padding-top: 19px;
+                    padding-bottom: 19px;
+                }
+                #clock {
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                }
+                .header{
+                    margin-top: 78px;
+                }
+                #searchinput{
+                    background-color: var(--tablebackground);
+                    color: var(--textcolor);
+                    height: 30px;
+                    text-align: var(--align);
+                    border: solid 2px var(--elementcolor);
+                    width: 275px;
+                }
+                .titletext{
+                    text-decoration: underline;
+                }
+                table, tr, td{
+                    background-color: var(--tablebackground);
+                    text-align: center;
+                    border: 2px var(--elementcolor) solid;
+                    border-collapse: collapse;
+                    width: 100%;
+                    padding: 6px;
+                }
+                td a{
+                    text-decoration: none;
+                    color: var(--textcolor);
+                }
+                td :hover {
+                    text-decoration: underline;
+                    color: var(--linkcolor);
+                }
+        </style>
+    </head>
+    <body onload="gettime()">
+        <div id="topper">
+            <h3>
+            <a href="../HTML/Homepage.html">Home</a>
+            <a href="Linux_Setup_Guide.html">Linux Setup Guide</a>
+            <a href="../HTML/Powerwash_and_Recovery.html">Powerwash and Recovery</a>
+            <a href="javascript:void(0)" onclick="Yourhere()"><span style="color: var(--acolor);">All Guides</span></a>
+            <div id="clock"></div>
+            </h3>
+        </div>
+        <div class="header">
+            <h1 class="titletext">All LGC Guides:</h1>
+            <p>All of these guides were made for Chromebooks, they are not meant for other devices but may work on computers running Debian or other Debian based Linux distros &#10090;like Ubuntu or Linux Mint&#10091;.</p>
+        </div>
+        <hr />
+        <div>
+            <input type="text" id="searchinput" onkeyup="searchinputscript()" placeholder="Search for a Guide by Name or Keyword" title="Search by Name or Keyword">
+        </div>
+        <p><i>Note: Some phrases may not work; also, to go to a guide just click on the text.</i></p>
+        <br />
+        <table id="allguidestable">
+            <tr>
+                <td style="width: 50%;"><a href="../HTML/GNOME_Appstore_Guide.html"><b>GNOME Software Install Guide</b>- How to install GNOME Software &#10090;GNOME&rsquo;s appstore&#10091;</a></td>
+                <td style="width: 50%;"><a href="../HTML/Linux_Setup_Guide.html"><b>Linux Setup Guide</b>- How to install and setup the Linux VM and Flathub on your Chromebook</a></td>
+            </tr>
+            <tr>
+                <td style="width: 50%;"><a href="../HTML/Steam_Guide.html"><b>Steam Install Guide &#10090;Latest&#10091;</b>- How to install Steam on your Chromebook</a></td>
+                <td style="width: 50%;"><a href="../HTML/Steam_Guide_old.html"><b>Steam Install Guide &#10090;Legacy&#10091;</b>- How to install Steam on your Chromebook if the Linux VM is still on Debian 11</a></td>
+            </tr>
+            <tr>
+                <td style="width: 50%;"><a href="../HTML/Gimp_Guide.html"><b>Gimp Install Guide</b>- How to install Gimp on your Chromebook, Gimp is a photo editor that is similar to Adobe Photoshop</a></td>
+                <td style="width: 50%;"><a href="../HTML/Openshot_Guide.html"><b>OpenShot Install Guide</b>- How to install OpenShot on your Chromebook, OpenShot is a basic video editor that is great for small or basic projects</a></td>
+            </tr>
+            <tr>
+                <td style="width: 50%;"><a href="../HTML/Godot_Guide.html"><b>Godot Install Guide</b>- How to install Godot on your Chromebook, Godot is a basic game engine that is great for making basic games.</a></td>
+                <td style="width: 50%;"><a href="../HTML/vs_code_guide.html"><b>Visual Studios Install Guide</b>- How to install VS Code on your Chromebook, VS Code is a versatial IDE that is perfect for coding in a variety of languages</a></td>
+            </tr>
+            <tr>
+                <td style="width: 50%;"><a href="../HTML/Dark_Mode_Guide.html"><b>Dark Theme Guide</b>- How to enable a dark or custom theme for &#10090;most&#10091; Linux apps</a></td>
+            </tr>
+            <tr>
+                <td style="width: 50%;"><a href="../HTML/Powerwash_and_Recovery.html"><b>Powerwash and Recovery Guide</b>- How to powerwash and/or recover your Chromebook</a></td>
+            </tr>
+        </table>
+        <h5>Google owns the right to the name "Chromebook"</h5>
+    </body>
+</html>

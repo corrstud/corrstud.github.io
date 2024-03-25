@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LGC VS Code Guide</title>
+        <link rel="icon" type="image/x-icon" href="../IMAGES/favicon.svg" />
+        <meta name="theme-color" content="#000037"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+            function Yourhere() {
+                alert("You're here")
+            }
+            var oldscrollyvar = window.pageYOffset;
+                window.onscroll = function(){
+                    var nowscrollyvar = window.pageYOffset;
+                    if (oldscrollyvar > nowscrollyvar) {
+                        document.getElementById("topper").style.top = "0";
+                    }
+                    else {
+                        document.getElementById("topper").style.top = "-65px";
+                    }
+                    oldscrollyvar = nowscrollyvar;
+                }
+
+            function gettime() {
+                const time = new Date();
+                let m = time.getMinutes();
+                let h = time.getHours();
+                m = updatetime(m)
+                document.getElementById("clock").innerHTML= h+":"+m;
+                setTimeout(gettime, 1000);
+            }
+            function updatetime(o) {
+                if (o<10) {o="0"+o};
+                return o;
+            }
+            console.log("You shouldn't be able to see this if you're a beginner; sorry if the guide is too simple it is made for beginners.")
+        </script>
+        <style>
+            :root{
+                    --backcolor: rgb(0, 0, 50);
+                    --textcolor: rgb(218, 218, 218);
+                    --acolor: rgb(185, 15, 49);
+                    --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    --align: center;       
+                    --topbackground: black;
+                    --linkcolor: rgb(0, 215, 215);
+                    }
+                body{
+                    background-color: var(--backcolor);
+                    color: var(--textcolor);
+                    text-align: var(--align);
+                    font-family: var(--font);
+                    border: var(--borders);
+                    margin-left: 2.5%;
+                    margin-right: 2.5%;
+                }
+                #topper{
+                    background-color: var(--topbackground);
+                    text-align: left;
+                    overflow: hidden;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: min-content;
+                    transition-duration: 0.5s;
+                }
+                #topper a{
+                    color: var(--textcolor);
+                    text-decoration: none;
+                    font-family: var(--font);
+                    margin-left: 4px;
+                    transition-duration: 0.5s;
+                }
+                #topper a:hover{
+                    background-color: darkblue;
+                    padding: 6px;
+                    padding-top: 19px;
+                    padding-bottom: 19px;
+                }
+                #clock {
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                }
+                .header{
+                    margin-top: 78px;
+                }
+                img{
+                    max-width: 600px;
+                }
+                .titletext{
+                    text-decoration: underline;
+                }
+                .list{
+                    display: inline-block;
+                    text-align: left;
+                    font-family: var(--font);
+                }
+                .divlist{
+                    text-align: center;
+                }
+                .copybutton{
+                    background-color: rgb(0, 0, 85);
+                    color: var(--textcolor);
+                    font-family: var(--font);
+                    text-decoration: none;
+                    padding: 6px 19px;
+                    border: var(--borders);
+                    cursor: pointer;
+                }
+        </style>
+    </head>
+    <body onload="gettime()">
+        <div id="topper">
+            <h3>
+            <a href="../HTML/Homepage.html">Home</a>
+            <a href="Linux_Setup_Guide.html">Linux Setup Guide</a>
+            <a href="../HTML/Powerwash_and_Recovery.html">Powerwash and Recovery</a>
+            <a href="../HTML/All_Guides.html">All Guides</a>
+            <a href="javascript:void(0)" onclick="Yourhere()"><span style="color: var(--acolor);">V.S. Code Install Guide</span></a>
+            <div id="clock"></div>
+            </h3>
+        </div>
+        <div class="header">
+            <h1 class="titletext">The Linux Gamers on Chromebook Co. Presents</h1>
+            <h2 class="titletext">How to Install VS Code on your Chromebook</h2>
+        <noscript><b>Your Web Browser Doesn't Support JavaScript! Don't Worry, This Website Was Coded Simply So, You Don't Need Javascript. Some Animations Or Icons May Be Broken Though.</b></noscript>
+        </div>
+        <hr />
+        <div>
+            <h2 class="titletext">Description:</h2>
+            <p>This guide will help you install Visual Studios on your Chromebook. Visual Studios is a popular IDE, and it is available for Linux. VS Code is stable and works perfectly on most Chromebooks. You can use VS Code to code in a large variety of languages.</p>
+        </div>
+        <hr />
+        <div>
+            <p>Warning: Make sure to follow this guide thoroughly, failure to do so may result in irrecoverable damage to your data. This is highly unlikely to happen though but follow the guide thoroughly.</p>
+            <p><b>Warning 2:</b> <b>Do not use or follow this guide if you are planning to use a school or organization owned device! Do not use or follow this guide on a device you do not have permission to modify!</b></p>
+        </div>
+        <hr />
+        <div>
+            <h2 class="titletext">Requirements:</h2>
+            <h3 class="titletext">Recommended Requirements:</h3>
+            <p>Press Ctrl+Search+Esc to find this:</p>
+            <div class="listdiv">
+                <ul class="list">
+                    <li>4GB+ RAM</li>
+                    <li>Dual-core Intel or AMD CPU at a minimum of 2.50 GHz</li>
+                </ul>
+            </div>
+            <h3 class="titletext">Mandatory Requirements:</h3>
+            <div class="listdiv">
+                <ul class="list">
+                    <li>Linux VM set up, and updated</li>
+                    <li>8GB+ of free storage in Linux VM</li>
+                    <li>15 minutes of time</li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+        <div>
+            <h2 class="titletext">Directions:</h2>
+            <p>Step 1: Go to <a href="https://code.visualstudio.com/docs/?dv=linux64_deb" target="_blank" style="color: var(--linkcolor);">VS Code Download Page</a> and save the install file. The install file should end with, &rsquo;&rsquo;.deb&rsquo;&rsquo;. If it doesn't, go to the all downloads page a select the one that ends with, &rsquo;&rsquo;.deb&rsquo;&rsquo;.</p>
+            <p>Step 2: Open the Chrome OS file manager a find the file you downloaded. Right-click and select, &rsquo;&rsquo;Install with Linux&rsquo;&rsquo; or double-click then click, &rsquo;&rsquo;Install&rsquo;&rsquo;.</p>
+            <img src="../IMAGES/imagevs1.png" width="45%" alt="select and install pic">
+            <p>Step 3: Once its done, press search &#10090;the key with a magnifying glass on it&#10091; and look for an app called, &rsquo;&rsquo;Visual Studios Code&rsquo;&rsquo; under, &rsquo;&rsquo;Linux Apps&rsquo;&rsquo; and click on it</p>
+            <p>Step 4: Click on the settings in VS Code, or press Ctrl +,</p>
+            <img src="../IMAGES/imagevs2.png" width="55%" alt="vscode settings location pic">
+            <p>Step 5:</p>
+            <div class="listdiv">
+                <ol type="1" class="list">
+                    <li>Search, &rsquo;&rsquo;titlebar&rsquo;&rsquo; in the settings</li>
+                    <li>Under, &rsquo;&rsquo;Title Bar Style&rsquo;&rsquo; click on the dropdown and set it to, &rsquo;&rsquo;custom&rsquo;&rsquo;.</li>
+                </ol>
+            </div>
+            <img src="../IMAGES/imagevs3.png" width="55%" alt="title bar setting pic">
+            <p>Step 6: If you see that the top of the VS Code window changes, you're finished. If not, right-click the terminal icon and select, &rsquo;&rsquo;Shut down Linux&rsquo;&rsquo;. Then open the linux terminal again. After the find the VS Code app icon and click on it.</p>
+            <p>Step 7: If you&rsquo;re developing websites download <a href="https://www.google.com/chrome/" target="_blank" style="color: var(--linkcolor);">Chrome</a> using Firefox from the <a href="../HTML/Linux_Setup_Guide.html" style="color: var(--linkcolor);">Linux Setup Guide</a>. Select the file that ends with, &quot;.deb&quot; and download it. Once its done, open the Chrome OS files app, find the file, and double-click it. Click install with Linux and can now run and debug html files.</p>
+        </div>
+        <hr />
+        <br />
+        <a href="#top" class="copybutton">Top of Page</a>
+        <br />
+        <br />
+        <h5>Google owns the right to the name "Chromebook"</h5>
+    </body>
+</html>

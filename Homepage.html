@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- 2. combine small guides by category
+    3. make install vids wit a fresh linux install 
+    4. mobile compatibility (tab thingy works, images don't, android file sys?)-->
+<!--Rev 3: put in legal bullshit, like google owns the rights to da name chromebook-->
+<!--Rev 4: polish da turd and get it ready for hostin-->
+    <html>
+        <head>
+            <title>LGC Homepage</title>
+            <link rel="icon" type="image/x-icon" href="../IMAGES/favicon.svg" />
+            <meta name="theme-color" content="#000037" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <script>
+                function Yourhere() {
+                    alert("You're here")
+                }
+                var oldscrollyvar = window.pageYOffset;
+                window.onscroll = function() {
+                    var nowscrollyvar = window.pageYOffset;
+                    if (oldscrollyvar > nowscrollyvar) {
+                        document.getElementById("topper").style.top = "0";
+                    }
+                    else {
+                        document.getElementById("topper").style.top = "-65px";
+                    }
+                    oldscrollyvar = nowscrollyvar;
+                }
+                function gettime() {
+                    const time = new Date();
+                    let m = time.getMinutes();
+                    let h = time.getHours();
+                    m = updatetime(m)
+                    document.getElementById("clock").innerHTML= h+":"+m;
+                    setTimeout(gettime, 1000);
+                }
+                function updatetime(o) {
+                    if (o<10) {o="0"+o};
+                    return o;
+                }
+            </script>
+            <style>
+                :root{
+                    --backcolor: rgb(0, 0, 50);
+                    --textcolor: rgb(218, 218, 218);
+                    --acolor: rgb(185, 15, 43);
+                    --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    --align: center;       
+                    --topbackground: black;
+                    --linkcolor: rgb(0, 215, 215);
+                    }
+                body{
+                    background-color: var(--backcolor);
+                    color: var(--textcolor);
+                    text-align: var(--align);
+                    font-family: var(--font);
+                    border: var(--borders);
+                }
+                #topper{
+                    background-color: var(--topbackground);
+                    text-align: left;
+                    overflow: hidden;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: min-content;
+                    transition-duration: 0.5s;
+                }
+                #topper a{
+                    color: var(--textcolor);
+                    text-decoration: none;
+                    font-family: var(--font);
+                    margin-left: 4px;
+                    transition-duration: 0.5s;
+                }
+                #topper a:hover{
+                    background-color: darkblue;
+                    padding: 6px;
+                    padding-top: 19px;
+                    padding-bottom: 19px;
+                }
+                #clock {
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                }
+                .header{
+                    margin-top: 78px;
+                }
+                .titletext{
+                    text-decoration: underline;
+                }
+                img{
+                    max-width: 450px;
+                }
+            </style>
+        </head>
+        <body onload="gettime()"> 
+            <div id="topper">
+                <h3>
+                <a href="javascript:void(0)" onclick="Yourhere()"><span style="color: var(--acolor);">Home</span></a>
+                <a href="../HTML/Linux_Setup_Guide.html">Linux Setup Guide</a>
+                <a href="../HTML/Powerwash_and_Recovery.html">Powerwash and Recovery</a>
+                <a href="../HTML/All_Guides.html">All Guides</a>
+                <div id="clock"></div>
+                </h3>
+            </div>
+                <div class="header">
+                    <h1 class="titletext">Welcome to the Linux Gamers on Chromebooks Homepage!</h1>
+                </div>
+                <div>
+                <img src="../IMAGES/favicon.svg" width="45%" alt="logo pic">
+                <footer>Thanks Cowemoji for the free image, found on <a href="https://commons.wikimedia.org/wiki/File:Tux-icon-mono.svg" target="_blank" style="color: var(--linkcolor);">wikimedia.org</a>.</footer>
+                <noscript><b>Your Web Browser Doesn't Support JavaScript! Don't Worry, This Website Was Coded Simply So, You Don't Need Javascript. Some Animations Or Icons May Be Broken Though.</b></noscript>
+                </div>
+                <hr />
+                <div>
+                    <h2 class="titletext">About this Website</h2>
+                    <p>This website is made for students or anybody else who has a Chromebook, and wants to get more use out of it. Chromebooks are really basic web-based laptops. They are fairly locked down which makes them more secure, so they are perfect for people who don't need to do much more than some basic presentations, watch videos, or play basic mobile games.</p>
+                    <p>The creators of this website have Chromebooks, and in fact coded this website soley using these Chromebooks. We like to play games, code and do others things on a computer that Chromebooks simply weren't designed to do. So we are setting out on a mission to give anybody who has a Chromebook the opertunity to make more use out of it. We are going to make plenty of guides for installing desktop games, installing desktop media editors, and more for Chromebooks.</p>
+                    <p>We are commited to making thurough, and easy to follow and understand guides. Soon, the page will be set up so that veiwers of this site can ask us to make guides for doing specific things on a Chromebook or getting specific software on a Chromebook.</p>
+                </div> 
+                <hr />
+                <div>
+                    <h2 class="titletext">Further Information</h2>
+                    <h4 class="titletext">Who is This Website Ideal for?</h4>
+                    <p>This website is an ideal source of information on how to modify your Chromebook to be more capable. We make specific and thurough guides suited for people who &#10090;most likely&#10091; don't have very much knowledge about how to obtain their Chromebook's true capabilities. This includes students, parents, and anybody else who &#10090;most likely&#10091; doesn't know much about how to use Linux but has a Chromebook that they want to use for more advanced things.</p>
+                    <br />
+                    <h4 class="titletext">What Kinds of Desktop Software can Most Chromebooks Run?</h4> 
+                    <p>Most Chromebooks &#10090;some Chromebooks don&rsquo;t have the ability to run Linux so they can&rsquo;t do this&#10091; can run webrowsers like Firefox, Chrome, or Edge, image editors like Gimp, video editors like Openshot, game launchers like Steam, and more. </p> 
+                    <br />
+                    <h4 class="titletext">Would I lose my data or pernamently alter my Chromebook?</h4>
+                    <p>Unless the guide explicitly states that losing your data or pernamently modifying your Chromebook is part of the process, your data and Chromebook will not pernamentally or significantly change as long as <b><i>THE PROCESS WAS SUCCESSFUL</i></b>.</p>
+                </div>
+                <h4>Google owns the right to the name "Chromebook"</h4>
+                <h4> For inquiries about content used on the website, or content removal such as images, or for other reasons like usage of names of products or other things on the website contact:</h4>
+        </body>
+    </html>

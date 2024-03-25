@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>LGC Steam Install Guide</title>
+            <link rel="icon" type="image/x-icon" href="../IMAGES/favicon.svg" />
+            <meta name="theme-color" content="#000037" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <script>
+                function Yourhere() {
+                    alert("You're here")
+                }
+                var oldscrollyvar = window.pageYOffset;
+                window.onscroll = function(){
+                    var nowscrollyvar = window.pageYOffset;
+                    if (oldscrollyvar > nowscrollyvar) {
+                        document.getElementById("topper").style.top = "0";
+                    }
+                    else {
+                        document.getElementById("topper").style.top = "-65px";
+                    }
+                    oldscrollyvar = nowscrollyvar;
+                }
+                function gettime() {
+                const time = new Date();
+                let m = time.getMinutes();
+                let h = time.getHours();
+                m = updatetime(m)
+                document.getElementById("clock").innerHTML= h+":"+m;
+                 setTimeout(gettime, 1000);
+            }
+            function updatetime(o) {
+                if (o<10) {o="0"+o};
+                return o;
+            }
+            </script>
+            <style>
+                :root{
+                    --backcolor: rgb(0, 0, 50);
+                    --textcolor: rgb(218, 218, 218);
+                    --acolor: rgb(185, 15, 49);
+                    --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    --align: center;       
+                    --topbackground: black;
+                    --linkcolor: rgb(0, 215, 215);
+                    }
+                body{
+                    background-color: var(--backcolor);
+                    color: var(--textcolor);
+                    text-align: var(--align);
+                    font-family: var(--font);
+                    border: var(--borders);
+                    margin-left: 2.5%;
+                    margin-right: 2.5%;
+                }
+                #topper{
+                    background-color: var(--topbackground);
+                    text-align: left;
+                    overflow: hidden;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: min-content;
+                    transition-duration: 0.5s;
+                }
+                #topper a{
+                    color: var(--textcolor);
+                    text-decoration: none;
+                    font-family: var(--font);
+                    margin-left: 4px;
+                    transition-duration: 0.5s;
+                }
+                #topper a:hover{
+                    background-color: darkblue;
+                    padding: 6px;
+                    padding-top: 19px;
+                    padding-bottom: 19px;
+                }
+                #clock {
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                }
+                .header{
+                    margin-top: 78px;
+                }
+                .titletext{
+                    text-decoration: underline;
+                }
+                .list{
+                    display: inline-block;
+                    text-align: left;
+                    font-family: var(--font);
+                }
+                .divlist{
+                    text-align: center;
+                }
+                .copybutton{
+                    background-color: rgb(0, 0, 85);
+                    color: var(--textcolor);
+                    text-decoration: none;
+                    padding: 6px 19px;
+                    border: var(--borders);
+                    cursor: pointer;
+                }
+            </style>
+        </head>
+        <body onload="gettime()">
+            <div id="topper">
+                <h3>
+                <a href="../HTML/Homepage.html">Home</a>
+                <a href="Linux_Setup_Guide.html">Linux Setup Guide</a>
+                <a href="../HTML/Powerwash_and_Recovery.html">Powerwash and Recovery</a>
+                <a href="../HTML/All_Guides.html">All Guides</a>
+                <a href="javascript:void(0)" onclick="Yourhere()"><span style="color: var(--acolor);">Steam Install Guide</span></a>
+                <div id="clock"></div>
+                </h3>
+            </div>
+            <div class="header">
+                    <h1 class="titletext">The Linux Gamers on Chromebooks Co.</h1>
+                    <h2 class="titletext">How to Install Desktop Steam on Chromebook</h2>
+                <noscript><b>Your Web Browser Doesn't Support JavaScript! Don't Worry, This Website Was Coded Simply So, You Don't Need Javascript. Some Animations Or Icons May Be Broken Though.</b></noscript>
+                </div>
+            <hr />
+            <div>
+                <h2 class="titletext">Description:</h2>
+                <p>This is the latest guide to installing Steam on your Chromebook. This guide is very simple and easy to follow, and there is very little risk of messing anything up. Note, Steam will be installed outside of the main Linux VM so your system needs at least 20-ish GB of free storage.</p>
+            </div>
+            <div>
+                <h2 class="titletext">Requirements:</h2>
+                <h3 class="titletext">Recommended Requirements:</h3>
+                <p>Press Ctrl+Search+Esc to find this:</p>
+                <div class="listdiv">
+                    <ul class="list">
+                        <li>8GB+ RAM</li>
+                        <li>Dual-core Intel or AMD CPU at a minimum of 2.50 GHz</li>
+                    </ul>
+                </div>
+                <h3 class="titletext">Mandatory Requirements:</h3>
+                <div class="listdiv">
+                    <ul class="list">
+                        <li>An Intel Core i3 or AMD Ryzen 3 or better &#10090;i5 or Ryzen 5&#10091;</li>
+                        <li>128GB+ of total storage</li>
+                        <li>24GB+ of free storage</li>
+                        <li>15 minutes of time</li>
+                    </ul>
+                </div>
+                <p><i>Note: We are sorry that many of you aren't going to be able to get Steam right now, we are still trying to figure out how to get Steam in the Linux terminal so that many more of you can play desktop games. As of the Debian 12 linux terminal update the Steam installer can't gain superuser access so it just denines the install. Sorry for any inconvienences, we will try to overcome this issue as soon as possible. If you didn&rsquo;t update the Linux terminal to Debian 12, follow this old guide. <a href="../HTML/Steam_Guide_old.html" target="_blank" style="color: var(--linkcolor);">Old Steam Guide</a></i></p>
+            </div>
+            <hr />
+            <div>
+                <h3 class="titletext">Directions</h3>
+                <p>Step 1: Press the search key&#10090;the key with a magnifying glass&#10091; and type in &rsquo;&rsquo;Steam&rsquo;&rsquo;.</p>
+                <!--First image of launcher here-->
+                <p>Step 2: Click on, &rsquo;&rsquo;Install Steam&rsquo;&rsquo; and folow the directions in the pop-up.</p>
+                <p><i>Note: If you don&rsquo;t see this option, your Chromebook is incompatable with Steam. Try following <a href="../HTML/Steam_Guide_old.html" style="color: var(--linkcolor);">this guide</a> if you still have Debian 11 for your Linux VM.</i></p>
+                <!--Second image, the setup app-->
+            </div>
+            <hr />
+            <div>
+                <p>And that's Steam installed, now you just need games, so we recommend <a href="https://store.steampowered.com/app/2281730/Combat_Master_Season_1/" style="color: var(--linkcolor);">Combat Masters</a>, and <a href="https://store.steampowered.com/app/1625450/Muck/" style="color: var(--linkcolor);">Muck</a>.
+            </div>
+            <br />
+            <a href="#top" class="copybutton">Top of Page</a>
+            <br />
+        <br />
+        <h5>Google owns the right to the name "Chromebook"</h5>
+        </body>
+    </html>
