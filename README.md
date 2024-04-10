@@ -1,2 +1,2 @@
 This is the Linux-Gamers-on-Chromebooks
-https://corrstud.github.io/Homepage.html
+https://corrstud.github.io/
